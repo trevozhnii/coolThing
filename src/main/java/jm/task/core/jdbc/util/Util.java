@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class Util {
+
   public static final String USER_NAME = "root";
   public static final String PASSWORD = "rootroot";
   public static final String URL = "jdbc:mysql://localhost:3306/mysql";
