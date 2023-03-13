@@ -34,18 +34,20 @@ public class Util {
     try {
       Properties properties = new Properties();
       properties.setProperty("hibernate.connection.driver_class", DRIVER);
-      properties.setProperty("hibernate.connection.url",URL);
-      properties.setProperty("hibernate.connection.username",USER_NAME);
-      properties.setProperty("hibernate.connection.password",PASSWORD);
-      properties.setProperty("hibernate.dialect",DIALECT);
+      properties.setProperty("hibernate.connection.url", URL);
+      properties.setProperty("hibernate.connection.username", USER_NAME);
+      properties.setProperty("hibernate.connection.password", PASSWORD);
+      properties.setProperty("hibernate.dialect", DIALECT);
       Configuration configuration = new Configuration();
       configuration.setProperties(properties);
       configuration.addAnnotatedClass(User.class);
       sessionFactory = configuration.buildSessionFactory();
-    } catch (Throwable e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
+
+
   public static Session getSession() {
 
     return sessionFactory.openSession();
